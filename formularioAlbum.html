@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Album</title>
+    <link rel="stylesheet" href="/album.css">
+</head>
+<body>
+
+    <header>
+        <div class="Navegar">
+
+            <div class="Navegar_Banda">
+              <a href="http://127.0.0.1:5500/formularioBanda.html" target="_blank">FORMULARIO BANDA</a>
+            </div>
+      
+            <div class="Navegar_Canciones">
+              <a href="http://127.0.0.1:5500/formularioCanciones.html" target="_blank">FORMULARIO CANCIONES</a>
+            </div>
+
+            <div class="Navegar_Integrantes">
+                <a href="http://127.0.0.1:5500/formularioIntegrantes.html" target="_blank">FORMULARIO INTEGRANTES</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedorRegistro">
+        <h2 class="titulo">Registra Informacion de los Albumes</h2>
+        <form action="" method="get">
+            <div>
+                <label for="nombreAlbum">NOMBRE DEL ALBUM</label>
+                <input type="text" name="nombreAlbum" id="nombreAlbum" placeholder="Nombre del Album">
+            </div>
+            <div>
+                <label for="fechaAlbum">FECHA DE LANZAMIENTO</label>
+                <input type="text" name="fechaAlbum" id="fechaAlbum" placeholder="fecha de Lanzamiento">
+            </div>
+            <div>
+                <label for="cancionesAlbum">CANCIONES</label>
+                <input type="text" name="cancionesAlbum" id="cancionesAlbum" placeholder="Ingresa las Canciones">
+            </div>
+            <div>
+                <label for="companiaDiscografica">COMPAÑIA DISCOGRAFICA</label>
+                <input type="text" name="companiaDiscografica" id="companiaDiscografica" placeholder="Compañia Discografica">
+            </div>
+            <div>
+                <label for="duracionAlbum">DURACION</label>
+                <input type="text" name="duracionAlbum" id="duracionAlbum" placeholder="Duracion del Album">
+            </div>
+            
+            
+            <input class="registrar" type="button" value="Registrar" onClick="testAlbum(this.form)">        
+                 
+            
+
+        </form>
+    </div>
+    <!--<script src="/index.js" type="module"></script>!-->
+
+    <script type="text/javascript">
+
+        const arreglo = [];
+
+        class Vinilo {
+            constructor ({ nombreAlbum, fechaAlbum, cancionesAlbum, companiaDiscografica, duracionAlbum })
+            {   this.nombreAlbum = nombreAlbum;
+                this.fechaAlbum = fechaAlbum;
+                this.cancionesAlbum = cancionesAlbum;
+                this.companiaDiscografica = companiaDiscografica;
+                this.duracionAlbum = duracionAlbum;
+
+            }
+        }
+		
+        function testAlbum (form) {
+            var nombreAlbum = form.nombreAlbum.value;
+            var fechaAlbum = form.fechaAlbum.value;
+            var cancionesAlbum = form.cancionesAlbum.value;
+            var companiaDiscografica = form.companiaDiscografica.value;
+            var duracionAlbum = form.duracionAlbum.value;
+            
+
+            const obj = new Vinilo ({
+                nombreAlbum: nombreAlbum,
+                fechaAlbum: fechaAlbum,
+                cancionesAlbum: cancionesAlbum,
+                companiaDiscografica: companiaDiscografica,
+                duracionAlbum: duracionAlbum,
+            });
+
+            arreglo.push(obj);
+
+            console.log(arreglo);
+
+            form.reset();
+            
+            /*console.log ("NOMBRE DEL ALBUM: " + nombreAlbum, "FECHA DEL ALBUM: " + fechaAlbum, "CANCIONES DEL ALBUM: "  + cancionesAlbum,
+                        "COMPAÑIA DISCOGRAFICA: "  + companiaDiscografica, "DURACION DEL ALBUM: " + duracionAlbum, 
+                           );*/
+        }
+    </script>
+    
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+       

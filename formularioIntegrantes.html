@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Integrantes</title>
+    <link rel="stylesheet" href="/integrantes.css">
+</head>
+<body>
+
+    <header>
+        <div class="Navegar">
+
+            <div class="Navegar_Album">
+              <a href="http://127.0.0.1:5500/formularioAlbum.html" target="_blank">FORMULARIO ALBUM</a>
+            </div>
+      
+            <div class="Navegar_Banda">
+              <a href="http://127.0.0.1:5500/formularioBanda.html" target="_blank">FORMULARIO BANDA</a>
+            </div>
+
+            <div class="Navegar_Canciones">
+                <a href="http://127.0.0.1:5500/formularioCanciones.html" target="_blank">FORMULARIO CANCIONES</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedorRegistro">
+        <h2 class="titulo">Registra Informacion de los Integrantes</h2>
+        <form action="" method="get">
+            <div>
+                <label for="nombreIntegrante">NOMBRE DEL INTEGRANTE</label>
+                <input type="text" name="nombreIntegrante" id="nombreIntegrante" placeholder="Ingresa el Nombre">
+            </div>
+            <div>
+                <label for="fechaNacimiento">FECHA DE NACIMIENTO</label>
+                <input type="text" name="fechaNacimiento" id="fechaNacimiento" placeholder="Ingresa Fecha Nacimiento">
+            </div>
+            <div>
+                <label for="nacionalidadIntegrante"> NACIONALIDAD INTEGRANTE</label>
+                <input type="text" name="nacionalidadIntegrante" id="nacionalidadIntegrante" placeholder="Nacionalidad Integrante">
+            </div>
+            <div>
+                <label for="trayectoria">TRAYECTORIA</label>
+                <input type="text" name="trayectoria" id="trayectoria" placeholder="Trayectoria">
+            </div>
+            <div>
+                <label for="nominacion">NOMINACIONES</label>
+                <input type="text" name="nominacion" id="nominacion" placeholder="Nominaciones">
+            </div>
+            <div>
+                <label for="genero">GENERO</label>
+                <input type="text" name="genero" id="genero" placeholder="Genero">
+            </div>
+            <div>
+                <label for="fechaMuerte">FECHA DE MUERTE</label>
+                <input type="text" name="fechaMuerte" id="fechaMuerte" placeholder="fecha de Muerte">
+            </div>
+            <div>
+                <label for="instrumentoIntegrante">INSTRUMENTO QUE TOCA</label>
+                <input type="text" name="instrumentoIntegrante" id="instrumentoIntegrante" placeholder="instrumento Que Toca">
+            </div>
+            
+            
+            <input class="registrar" type="button" value="Registrar" onClick="testIntegrantes(this.form)">        
+                 
+            
+
+        </form>
+    </div>
+    <!--<script src="/index.js" type="module"></script>!-->
+
+    <script type="text/javascript">
+
+const arreglo = [];
+
+class Personajes {
+    constructor ({ nombreIntegrante, fechaNacimiento, nacionalidadIntegrante, trayectoria, nominacion, genero, fechaMuerte, instrumentoIntegrante   })
+    {   this.nombreIntegrante = nombreIntegrante;
+        this.fechaNacimiento = fechaNacimiento;
+        this.nacionalidadIntegrante = nacionalidadIntegrante;
+        this.trayectoria = trayectoria;
+        this.nominacion = nominacion;
+        this.genero = genero;
+        this.fechaMuerte = fechaMuerte;
+        this.instrumentoIntegrante = instrumentoIntegrante;
+
+    }
+}
+		
+        function testIntegrantes (form) {
+            var nombreIntegrante = form.nombreIntegrante.value;
+            var fechaNacimiento = form.fechaNacimiento.value;
+            var nacionalidadIntegrante = form.nacionalidadIntegrante.value;
+            var trayectoria = form.trayectoria.value;
+            var nominacion = form.nominacion.value;
+            var genero = form.genero.value;
+            var fechaMuerte = form.fechaMuerte.value;
+            var instrumentoIntegrante = form.instrumentoIntegrante.value;
+            
+
+            const obj = new Personajes ({
+                nombreIntegrante: nombreIntegrante,
+                fechaNacimiento: fechaNacimiento,
+                nacionalidadIntegrante: nacionalidadIntegrante,
+                trayectoria: trayectoria,
+                nominacion: nominacion,
+                genero: genero,
+                fechaMuerte: fechaMuerte,
+                instrumentoIntegrante: instrumentoIntegrante,
+            });
+
+            arreglo.push(obj);
+
+            console.log(arreglo);
+
+            form.reset();
+            
+            /*console.log ("NOMBRE DEL INTEGRANTE: " + nombreIntegrante, "FECHA DE NACIMIENTO: " + fechaNacimiento, 
+                        "NACIONALIDAD: "  + nacionalidadIntegrante, "TRAYECTORIA: "  + trayectoria, 
+                        "NOMINACION: " + nominacion, "GENERO: " + genero, "FECHA DE MUERTE: " + fechaMuerte, 
+                        "INSTRUMENTO QUE TOCA: " + instrumentoIntegrante, 
+                           );*/
+        }
+    </script>
+    
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+       

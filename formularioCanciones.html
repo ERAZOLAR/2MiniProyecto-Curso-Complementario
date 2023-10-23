@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Canciones</title>
+    <link rel="stylesheet" href="/canciones.css">
+</head>
+<body>
+
+    <header>
+        <div class="Navegar">
+
+            <div class="Navegar_Album">
+              <a href="http://127.0.0.1:5500/formularioAlbum.html" target="_blank">FORMULARIO ALBUM</a>
+            </div>
+      
+            <div class="Navegar_Banda">
+              <a href="http://127.0.0.1:5500/formularioBanda.html" target="_blank">FORMULARIO BANDA</a>
+            </div>
+
+            <div class="Navegar_Integrantes">
+                <a href="http://127.0.0.1:5500/formularioIntegrantes.html" target="_blank">FORMULARIO INTEGRANTES</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedorRegistro">
+        <h2 class="titulo">Registra Informacion de las Canciones</h2>
+        <form action="" method="get">
+            <div>
+                <label for="tituloCancion">TITULO DE LA CANCION</label>
+                <input type="text" name="tituloCancion" id="tituloCancion" placeholder="Titulo de la Cancion">
+            </div>
+            <div>
+                <label for="duracionCancion">DURACION DE LA CANCION</label>
+                <input type="text" name="duracionCancion" id="duracionCancion" placeholder="Duracion de Cancion">
+            </div>
+            <div>
+                <label letraCancion">LETRA DE LA CANCION</label>
+                <input class="letra" type="text" name="letraCancion" id="letraCancion" placeholder="Ingresa la letra de la Cancio">
+            </div>
+            
+            
+            <input class="registrar" type="button" value="Registrar" onClick="testCanciones(this.form)">        
+                 
+            
+        </form>
+    </div>
+    <!--<script src="/index.js" type="module"></script>!-->
+
+    <script type="text/javascript">
+
+const arreglo = [];
+
+class Melodias {
+    constructor ({ tituloCancion, duracionCancion, letraCancion })
+    {   this.tituloCancion = tituloCancion;
+        this.duracionCancion = duracionCancion;
+        this.letraCancion = letraCancion;
+        
+
+    }
+}
+		
+        function testCanciones (form) {
+            var tituloCancion = form.tituloCancion.value;
+            var duracionCancion = form.duracionCancion.value;
+            var letraCancion = form.letraCancion.value;
+           
+
+            const obj = new Melodias ({
+                tituloCancion: tituloCancion,
+                duracionCancion: duracionCancion,
+                letraCancion: letraCancion,
+                
+            });
+
+            arreglo.push(obj);
+
+            console.log(arreglo);
+
+            form.reset();
+            
+            /*console.log ("TITULO DE LA CANCION: " + tituloCancion, "DURACION DE LA CANCION: " + duracionCancion, 
+                        "LETRA DE LA CANCION: "  + letraCancion,
+                        );*/
+        }
+    </script>
+    
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+       

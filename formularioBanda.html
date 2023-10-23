@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Banda</title>
+    <link rel="stylesheet" href="banda.css">
+</head>
+<body>
+
+    <header>
+        <div class="Navegar">
+
+            <div class="Navegar_Album">
+              <a href="http://127.0.0.1:5500/formularioAlbum.html" target="_blank">FORMULARIO ALBUM</a>
+            </div>
+      
+            <div class="Navegar_Canciones">
+              <a href="http://127.0.0.1:5500/formularioCanciones.html" target="_blank">FORMULARIO CANCIONES</a>
+            </div>
+
+            <div class="Navegar_Integrantes">
+                <a href="http://127.0.0.1:5500/formularioIntegrantes.html" target="_blank">FORMULARIO INTEGRANTES</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenedorRegistro">
+        <h2 class="titulo">Registra Informacion de las Bandas</h2>
+        <form action="" method="get">
+            <div>
+                <label for="nombre">NOMBRE DE LA BANDA</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ingresa el Nombre">
+            </div>
+            <div>
+                <label for="tipo">TIPO DE BANDA</label>
+                <input type="text" name="tipo" id="tipo" placeholder="Ingresa el Tipo">
+            </div>
+            <div>
+                <label for="integrantes">INTEGRANTES</label>
+                <input type="text" name="integrantes" id="integrantes" placeholder="Ingresa los Integrantes">
+            </div>
+            <div>
+                <label for="anoFundacion">AÑO DE FUNDACION</label>
+                <input type="text" name="anoFundacion" id="anoFundacion" placeholder="Año de Fundacion">
+            </div>
+            <div>
+                <label for="nacionalidad">PAIS DE ORIGEN</label>
+                <input type="text" name="nacionalidad" id="nacionalidad" placeholder="Pais de Origen">
+            </div>
+            <div>
+                <label for="anoDisolucion">AÑO DISOLUCION</label>
+                <input type="text" name="anoDisolucion" id="anoDisolucion" placeholder="Año Disolucion">
+            </div>
+            <div>
+                <label for="idioma">IDIOMA</label>
+                <input type="text" name="idioma" id="idioma" placeholder="Ingresa el Idioma">
+            </div>
+            <div>
+                <label for="influencia">INFLUENCIAS MUSICALES</label>
+                <input type="text" name="influencia" id="influencia" placeholder="Influencia">
+            </div>
+            <div>
+                <label for="instrumentos">INSTRUMENTOS</label>
+                <input type="text" name="instrumentos" id="instrumentos" placeholder="Instrumentos Usados">
+            </div>
+            
+            <input class="registrar" type="button" value="Registrar" onClick="testBanda(this.form)">        
+                 
+            
+
+        </form>
+    </div>
+    <!--<script src="/index.js" type="module"></script>!-->
+
+    <script type="text/javascript">
+
+        const arreglo = [];
+
+        class Grupo {
+            constructor ({ nombre, tipo, integrantes, anoFundacion, nacionalidad, anoDisolucion, idioma, influencia, instrumentos  })
+            {   this.nombre = nombre;
+                this.tipo = tipo;
+                this.integrantes = integrantes;
+                this.anoFundacion = anoFundacion;
+                this.nacionalidad = nacionalidad;
+                this.anoDisolucion = anoDisolucion;
+                this.idioma = idioma;
+                this.influencia = influencia;
+                this.instrumentos = instrumentos;
+
+            }
+        }
+		
+        function testBanda (form) {
+            var nombre = form.nombre.value;
+            var tipo = form.tipo.value;
+            var integrantes = form.integrantes.value;
+            var anoFundacion = form.anoFundacion.value;
+            var nacionalidad = form.nacionalidad.value;
+            var anoDisolucion = form.anoDisolucion.value;
+            var idioma = form.idioma.value;
+            var influencia = form.influencia.value;
+            var instrumentos = form.instrumentos.value;
+
+            const obj = new Grupo ({
+                nombre: nombre,
+                tipo: tipo,
+                integrantes: integrantes,
+                anoFundacion: anoFundacion,
+                nacionalidad: nacionalidad,
+                anoDisolucion: anoDisolucion,
+                idioma: idioma,
+                influencia: influencia,
+                instrumentos: instrumentos,
+            });
+
+            arreglo.push(obj);
+
+            console.log(arreglo);
+
+            form.reset();
+            
+            /*console.log ("NOMBRE DE LA BANDA: " + nombre, "TIPO DE BANDA: " + tipo, "INTEGRANTES: "  + integrantes,
+                        "AÑO DE FUNDACION: "  + anoFundacion, "NACIONALIDAD: " + nacionalidad, "AÑO DE DISOLUCION: " + anoDisolucion,
+                         "IDIOMA: " + idioma, "INFLUENCIAS MUSICALES: " + influencia, "INSTRUMENTOS MUSICALES: " + instrumentos,
+                           );*/
+        }
+    </script>
+    
+</body>
+</html>
+
+        
+        
+        
+        
+        
+        
+        
+        
+       
